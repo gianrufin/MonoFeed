@@ -1,0 +1,6 @@
+{
+  "name": "MonoFeed",
+  "description": "Daily 100% verified facts about the Philippines. Minimalist, high-contrast, offline-first card feed with mobile notifications and direct social sharing.",
+  "requestFramePermissions": ["notifications"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
