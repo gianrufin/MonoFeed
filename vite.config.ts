@@ -5,8 +5,10 @@ import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig(() => {
+  const basePath = process.env.BASE_PATH || './';
+
   return {
-    base: process.env.BASE_PATH || './',
+    base: basePath,
     plugins: [
       react(),
       tailwindcss(),
@@ -21,7 +23,7 @@ export default defineConfig(() => {
           'pwa-maskable-512x512.png'
         ],
         manifest: {
-          id: './',
+          id: basePath,
           name: 'MonoFeed · Philippine Facts',
           short_name: 'MonoFeed',
           description: 'Daily 100% verified facts about the Philippines in a minimal, high-contrast offline card feed.',
@@ -29,8 +31,8 @@ export default defineConfig(() => {
           background_color: '#09090b',
           display: 'standalone',
           orientation: 'portrait',
-          start_url: './',
-          scope: './',
+          start_url: basePath,
+          scope: basePath,
           icons: [
             {
               src: 'pwa-192x192.png',
@@ -86,8 +88,7 @@ export default defineConfig(() => {
           ]
         },
         devOptions: {
-          enabled: true,
-          type: 'module'
+          enabled: false
         }
       })
     ],
